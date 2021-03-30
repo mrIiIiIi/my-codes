@@ -7,6 +7,7 @@
 #define echoPin 12 // change here if required. attach pin D12 Arduino to pin Echo 
 #define trigPin 13 //attach pin D13 Arduino to pin Trig 
 int rangeled[] = {12,10,9,8,7,6,5,4,3,2};
+// defines variables
 long duration; // variable for the duration of sound wave travel
 int distance_cm; // variable for centimeters measurement
 int distance_inch; // variable for inches measurement
@@ -23,6 +24,9 @@ void setup() {
 
 }
 void loop() {
+   for(int a=0;a<10;a++){
+     digitalWrite(rangeled[a], LOW);
+   }
   // Clears the trigPin condition
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -35,6 +39,9 @@ void loop() {
   // Calculating the distance
   distance_cm = duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
   distance_inch = duration * 0.0133 / 2; // Speed of sound wave divided by 2 (go and back)
-  digitalWrite(rangeled[1,distance_cm],HIGH);
- 
+  
+  for(int a=0;a<distance_cm;a++){  
+  digitalWrite(rangeled[a],HIGH);
+  }
+
 }
