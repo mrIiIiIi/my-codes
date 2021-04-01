@@ -14,7 +14,7 @@ void setup() {
  for(int i=0;i<=noofleds;i++){
     pinMode(ledpin[i],OUTPUT);
   }
-  pinMode(ledpin[1],OUTPUT);
+
   Serial.println("All ok");
 }
 
@@ -38,15 +38,18 @@ void loop() {
   Serial.print(distance);
   Serial.println(" cm");
   int vali = range/noofleds;
-  for(int i=0;i<=noofleds;i++){
-    if(distance>=i*vali){
+  
+  for(int i = 0;i<=noofleds-1;i++){
+    if(distance<=i*vali){
       digitalWrite(ledpin[i],HIGH);
     }
     else{
       digitalWrite(ledpin[i], LOW);
-     
    }
-    delayMicroseconds(10);
+   
   }
-  //digitalWrite(ledpin[3],HIGH);
+  
+  //gitalWrite(ledpin[1],LOW);
+   Serial.println(vali);
+  
 }
