@@ -14,6 +14,9 @@ and this button
 
 ![image](https://user-images.githubusercontent.com/79796314/114540691-756a3980-9c73-11eb-9cd8-247af22e284e.png)
 
+extract (led sonar.ino)
+and upload to arduino
+
 
 
 # wiring 
